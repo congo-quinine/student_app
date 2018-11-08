@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_time: 2018-11-07 15:17:43
+  student_id: 1
+
+two:
+  date_time: 2018-11-07 15:17:43
+  student_id: 1

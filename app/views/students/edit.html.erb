@@ -1,0 +1,9 @@
+<h1>Edit a Student</h1>
+<hr>
+<%=form_for @student do |f|%>
+  <%=f.label :name%>
+  <%=f.text_field :name%>
+  <br>
+  <%=f.submit%>
+<%end%>
+<%= link_to 'Delete', student_path(@student), method: :delete %> 

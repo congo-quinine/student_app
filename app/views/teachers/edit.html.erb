@@ -1,0 +1,9 @@
+<h1> Edit teacher </h1>
+
+<%= form_for @teacher do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :subject %>
+<%= f.text_field :subject %>
+<%= f.submit %>
+<% end %>

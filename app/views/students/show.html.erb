@@ -1,0 +1,29 @@
+<h1><%=@student.name%></h1>
+<hr>
+<%if @student.teachers.length > 0%>
+  <h3>Your teachers are:</h3>
+  <ol>
+    <%@student.teachers.uniq.each do |t|%>
+      <li>
+        <%=link_to t.name, t%>
+      </li>
+    <%end%>
+  </ol>
+<%else%>
+  <h3>You have no teachers.</h3>
+<%end%>
+<hr>
+<%if @student.lectures.length > 0%>
+  <h3>Your lectures are:</h3>
+  <ol>
+    <%@student.lectures.each do |l|%>
+      <li>
+        <h3><%=l.teacher.name%>: <%=l.date_time%>. Subject: <%=l.teacher.subject%></h3>
+      </li>
+
+    <%end%>
+  </ol>
+<%else%>
+  <h3>You have no lectures</h3>
+<%end%>
+<h5><%=link_to "Go back", students_path%> <%=link_to "Edit", edit_student_path%></h5>

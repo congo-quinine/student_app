@@ -1,0 +1,20 @@
+
+<h1> <%= @teacher.name %> </h1>
+
+<% if @teacher.lectures.length > 0 %>
+<p> You have <%=@teacher.lectures.length%> lectures </p>
+<% @teacher.lectures.each do |l| %>
+<p> The lecture is scheduled for <%= l.date_time.strftime("%B %d, %Y at %H:%M") %> </p>
+  <%= link_to l.student.name, l.student %>
+<% end %>
+<% else %>
+<p>You have no lecture</p>
+<% end %>
+<br>
+<br>
+
+<h1>Create a lecture </h1>
+
+<%= link_to "Go back", teachers_path %>
+<%=link_to "Edit the teacher", edit_teacher_path %>
+<%= link_to "Delete the teacher",teacher_path(@teacher), method: :delete %>

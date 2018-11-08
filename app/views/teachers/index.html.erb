@@ -1,0 +1,12 @@
+<h1> Teacher Zone </h1>
+
+<ul>
+  <% @teachers.each do |t| %>
+  <li> <%= link_to t.name, t %> </li>
+  <% if t.lectures.length > 0 %>
+  <p> You have <%=t.lectures.length%> lectures </p>
+  <% else %>
+  <p>You have no lecture.</p>
+<% end %>
+<% end %>
+</ul>
